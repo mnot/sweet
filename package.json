@@ -1,7 +1,7 @@
 { "name" : "sweet"
 , "description" : "Sweet Disposition: Interoperable Content-Disposistion headers"
 , "keywords" : [ "HTTP", "i18n", "Content-Disposition" ]
-, "version" : "0.1.0"
+, "version" : "0.1.1"
 , "homepage" : "https://github.com/mnot/sweet"
 , "author" : "Mark Nottingham <mnot@mnot.net> (http://www.mnot.net/)"
 , "repository" :
