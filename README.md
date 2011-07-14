@@ -10,22 +10,23 @@ suitable for use as a Content-Disposition header value.
 
 For example:
 
-  var http = require('http');
-  var sweet = require('sweet');
+```
+var http = require('http');
+var sweet = require('sweet');
 
-  # "my stuff" in Japanese
-  var cd_value = sweet.make_disposition(
-    'attachment', '私のもの', 'my stuff'
-  );
+# "my stuff" in Japanese
+var cd_value = sweet.make_disposition(
+  'attachment', '私のもの', 'my stuff'
+);
 
-  http.createServer(function (req, res) {
-    res.writeHead(200, {
-      'Content-Type': 'text/plain',
-      'Content-Disposition': cd_value;
-    });
-    res.end('Hello World\n');
-  }).listen(1337, "127.0.0.1");
-
+http.createServer(function (req, res) {
+  res.writeHead(200, {
+    'Content-Type': 'text/plain',
+    'Content-Disposition': cd_value;
+  });
+  res.end('Hello World\n');
+}).listen(1337, "127.0.0.1");
+```
 
 See [RFC6266](http://tools.ietf.org/html/rfc6266) for the spec and related details.
 
