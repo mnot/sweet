@@ -22,4 +22,7 @@
     , "url" : "http://github.com/mnot/sweet/raw/master/LICENSE"
     }
   ]
+, "scripts" :
+  { "test" : "node test/test.js"
+  }
 }
