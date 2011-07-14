@@ -14,7 +14,7 @@ For example:
 var http = require('http');
 var sweet = require('sweet');
 
-# "my stuff" in Japanese
+// "my stuff" in Japanese
 var cd_value = sweet.make_disposition(
   'attachment', '私のもの', 'my stuff'
 );
@@ -22,7 +22,7 @@ var cd_value = sweet.make_disposition(
 http.createServer(function (req, res) {
   res.writeHead(200, {
     'Content-Type': 'text/plain',
-    'Content-Disposition': cd_value;
+    'Content-Disposition': cd_value
   });
   res.end('Hello World\n');
 }).listen(1337, "127.0.0.1");
