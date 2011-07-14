@@ -5,7 +5,7 @@ Getting the syntax for HTTP Content-Disposition headers to work well with browse
 
 Sweet is here to help. 
 
-It exposes one function - make\_disposition - that returns a value
+It exposes one function - make\_disposition ( disposition, filename, fallback )- that takes the disposition ("attachment" or "inline"), a filename (possibly non-ASCII) and a fallback filename (always ASCII). and returns a value
 suitable for use as a Content-Disposition header value.
 
 For example:
@@ -45,6 +45,8 @@ Unfortunately, there are some UTF-8 characters that look like ISO-8859-1 charact
 If you're generating non-ASCII filenames, all current releases of mainstream browsers will see it, except for Safari (which falls back to the ASCII filename).
 
 Internet Explorer versions 6, 7 and 8, as well as Mozilla 3, 3.5 and 4 will also use the ASCII filename.
+
+See [the browser tests](http://greenbytes.de/tech/tc2231/) for more detail.
 
 
 ## Contact
