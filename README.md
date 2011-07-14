@@ -32,15 +32,15 @@ See [RFC6266](http://tools.ietf.org/html/rfc6266) for the spec and related detai
 
 Note that Sweet is *just* for setting Content-Disposition in HTTP responses (e.g., for file downloads); it won't help with MIME multi-part messages, for example.
 
-## Frequently Asked Questions
+### Frequently Asked Questions
 
-### Why shouldn't I just produce the C-D header in UTF-8 directly?
+#### Why shouldn't I just produce the C-D header in UTF-8 directly?
 
 HTTP headers are defined to be ISO-8859-1, so encoding them as UTF-8 assumes that the client will correctly "sniff" the encoding.
 
 Unfortunately, there are some UTF-8 characters that look like ISO-8859-1 characters, such as an a with an umlaut (ä). In these cases, some browsers will treat it as UTF-8, even though it's valid ISO-8859-1, causing a loss of interoperability; your users will see the wrong filename.
 
-### How will browsers treat Sweet's Content-Disposition headers?
+#### How will browsers treat Sweet's Content-Disposition headers?
 
 If you're generating non-ASCII filenames, all current releases of mainstream browsers will see it, except for Safari (which falls back to the ASCII filename).
 
