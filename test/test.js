@@ -27,6 +27,37 @@ var test_cases = [
   },
   {
     disposition: 'attachment',
+    filename: 'foo%20bar.html',
+    filename_fallback: 'foo bar.html',
+    expected: 'attachment; filename="foo bar.html"; filename*=utf-8\'\'foo%2520bar.html'
+  },
+  {
+    disposition: 'attachment',
+    filename: 'foo%20bar.html',
+    expected: null
+  },
+  {
+    disposition: 'attachment',
+    filename: 'foo/bar.html',
+    expected: null
+  },
+  {
+    disposition: 'attachment',
+    filename: '/foo.html',
+    expected: null
+  },
+  {
+    disposition: 'attachment',
+    filename: 'foo\bar.html',
+    expected: null
+  },
+  {
+    disposition: 'attachment',
+    filename: '\foo.html',
+    expected: null
+  },
+  {
+    disposition: 'attachment',
     filename: 'föö.html',
     expected: null
   },
